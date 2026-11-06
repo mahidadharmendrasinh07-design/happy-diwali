@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diwali Greeting Card 🪔</title>
+<title>Gujarati Festival Wishes 🪔</title>
 
 <style>
 * {
@@ -14,58 +14,54 @@
 }
 
 body {
-    background: linear-gradient(135deg,#360707,#811d13,#350707);
-    color: #fff2ce;
+    background: #4b1009;
+    color: #fff1ce;
     font-family: "Nirmala UI", sans-serif;
     text-align: center;
-    padding: 25px 15px;
+    padding: 25px 12px;
 }
 
 .container {
     max-width: 500px;
     margin: auto;
     padding: 25px 18px;
-    border: 2px solid #e9bd56;
-    border-radius: 22px;
-    background: #4b0b0b;
-    box-shadow: 0 0 25px #ffbb4480;
+    background: #fff3d5;
+    color: #6c220e;
+    border: 4px solid #dba83e;
+    border-radius: 20px;
 }
 
 h1 {
-    color: #ffd76a;
+    color: #9d350c;
     margin-bottom: 15px;
-    font-size: 32px;
 }
 
 p {
     line-height: 1.8;
-    margin-bottom: 15px;
+    margin: 12px 0;
 }
 
-input {
+select, input {
     width: 100%;
     padding: 14px;
     margin: 9px 0;
-    border: 2px solid #e9bd56;
+    border: 2px solid #dba83e;
     border-radius: 10px;
     font-size: 16px;
+    background: white;
 }
 
 button {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
     margin-top: 12px;
     border: none;
-    border-radius: 12px;
-    background: linear-gradient(90deg,#ffe17b,#ff9e22);
-    color: #501000;
-    font-size: 16px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#ffdc78,#eaa32d);
+    color: #581b08;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-}
-
-button:hover {
-    transform: scale(1.02);
 }
 
 #cardArea {
@@ -75,17 +71,15 @@ button:hover {
 
 #preview {
     width: 100%;
-    border: 3px solid gold;
-    border-radius: 12px;
-    margin-top: 12px;
+    border: 3px solid #dba83e;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
-.share-note {
+.note {
     font-size: 13px;
-    color: #ffe2a1;
-    margin-top: 10px;
+    color: #6c220e;
 }
-
 </style>
 </head>
 
@@ -93,237 +87,309 @@ button:hover {
 
 <div class="container">
 
-    <h1>🪔 શુભ દિવાળી 🪔</h1>
+<h1>🪔 તહેવારની શુભકામનાઓ 🪔</h1>
 
-    <p>
-        પ્રકાશના પર્વની હાર્દિક શુભકામનાઓ!
-        <br>
-        તમારી પોતાની દિવાળી શુભેચ્છા બનાવો.
-    </p>
+<p>તમારા નામથી સુંદર શુભેચ્છા કાર્ડ બનાવો અને મોકલો!</p>
 
-    <input
-        type="text"
-        id="sender"
-        placeholder="તમારું નામ લખો"
-        maxlength="35"
-    >
+<select id="festival">
+    <option value="diwali">શુભ દિવાળી</option>
+    <option value="dhanteras">શુભ ધનતેરસ</option>
+    <option value="newyear">નવું વર્ષ</option>
+</select>
 
-    <input
-        type="text"
-        id="receiver"
-        placeholder="જેને મોકલવું છે તેનું નામ"
-        maxlength="35"
-    >
+<input
+    type="text"
+    id="sender"
+    placeholder="તમારું નામ લખો"
+    maxlength="35"
+>
 
-    <button onclick="makeCard()">
-        🎁 Greeting Card બનાવો
-    </button>
+<input
+    type="text"
+    id="receiver"
+    placeholder="સામેની વ્યક્તિનું નામ"
+    maxlength="35"
+>
 
-    <div id="cardArea">
+<button onclick="makeCard()">
+🎁 મારું શુભેચ્છા કાર્ડ બનાવો
+</button>
 
-        <h2>તમારું દિવાળી કાર્ડ તૈયાર છે! 🎉</h2>
+<div id="cardArea">
 
-        <img id="preview" alt="Diwali Greeting Card">
+<h2>તમારું કાર્ડ તૈયાર છે! 🎉</h2>
 
-        <button onclick="shareCard()">
-            📲 WhatsApp પર કાર્ડ મોકલો
-        </button>
+<img id="preview" alt="તમારું શુભેચ્છા કાર્ડ">
 
-        <button onclick="downloadCard()">
-            ⬇️ કાર્ડ Download કરો
-        </button>
+<button onclick="shareCard()">
+📲 WhatsApp પર કાર્ડ મોકલો
+</button>
 
-        <p class="share-note">
-            WhatsApp Share વિકલ્પમાં WhatsApp પસંદ કરીને
-            તમારા મિત્રને કાર્ડ મોકલો.
-        </p>
+<button onclick="downloadCard()">
+⬇️ કાર્ડ Download કરો
+</button>
 
-    </div>
+<p class="note">
+WhatsApp Share Menu માં WhatsApp પસંદ કરો.
+</p>
 
-    <canvas id="card" width="1080" height="1350"
-    style="display:none"></canvas>
+</div>
+
+<canvas id="card" width="900" height="1200"
+style="display:none"></canvas>
 
 </div>
 
 <script>
 
 let cardBlob = null;
+let cardURL = null;
 
-function drawText(ctx, text, x, y, maxWidth, lineHeight) {
+function centerText(ctx,text,y,font,color) {
+    ctx.font = font;
+    ctx.fillStyle = color;
+    ctx.textAlign = "center";
+    ctx.fillText(text,450,y);
+}
+
+function wrapText(ctx,text,y,maxWidth,lineHeight,font,color) {
+
+    ctx.font = font;
+    ctx.fillStyle = color;
+    ctx.textAlign = "center";
 
     let words = text.split(" ");
     let line = "";
 
-    for (let i = 0; i < words.length; i++) {
+    for(let word of words) {
 
-        let test = line + words[i] + " ";
+        let test = line + word + " ";
 
-        if (ctx.measureText(test).width > maxWidth && line) {
-            ctx.fillText(line.trim(), x, y);
-            line = words[i] + " ";
+        if(ctx.measureText(test).width > maxWidth && line) {
+            ctx.fillText(line.trim(),450,y);
+            line = word + " ";
             y += lineHeight;
         } else {
             line = test;
         }
     }
 
-    if (line) {
-        ctx.fillText(line.trim(), x, y);
+    if(line) {
+        ctx.fillText(line.trim(),450,y);
     }
 }
 
 async function makeCard() {
 
-    let sender = document.getElementById("sender").value.trim();
-    let receiver = document.getElementById("receiver").value.trim();
+    const sender = document.getElementById("sender").value.trim();
+    const receiver = document.getElementById("receiver").value.trim();
+    const festival = document.getElementById("festival").value;
 
-    if (!sender || !receiver) {
-        alert("કૃપા કરીને બંને નામ લખો!");
+    if(!sender || !receiver) {
+        alert("બંને નામ લખો!");
         return;
     }
 
+    const canvas = document.getElementById("card");
+    const ctx = canvas.getContext("2d");
+
     await document.fonts.ready;
 
-    let canvas = document.getElementById("card");
-    let ctx = canvas.getContext("2d");
-
     // Background
-    let bg = ctx.createLinearGradient(0,0,1080,1350);
-    bg.addColorStop(0,"#390606");
-    bg.addColorStop(0.5,"#891b10");
-    bg.addColorStop(1,"#360606");
+    let bg = ctx.createLinearGradient(0,0,900,1200);
+
+    bg.addColorStop(0,"#fff9e8");
+    bg.addColorStop(0.5,"#ffeac0");
+    bg.addColorStop(1,"#fff5d9");
 
     ctx.fillStyle = bg;
-    ctx.fillRect(0,0,1080,1350);
+    ctx.fillRect(0,0,900,1200);
 
     // Golden border
-    ctx.strokeStyle = "#ffdb76";
+    ctx.strokeStyle = "#c68a24";
     ctx.lineWidth = 12;
-    ctx.strokeRect(35,35,1010,1280);
+    ctx.strokeRect(22,22,856,1156);
 
-    ctx.strokeStyle = "#e6a82f";
+    ctx.strokeStyle = "#e6b65c";
     ctx.lineWidth = 3;
-    ctx.strokeRect(55,55,970,1240);
+    ctx.strokeRect(40,40,820,1120);
 
-    // Rangoli circles
-    ctx.textAlign = "center";
+    // Decorations
+    centerText(ctx,"🌼 🌺 🌼 🌺 🌼",115,"55px sans-serif","#a44b0b");
 
-    ctx.font = "100px sans-serif";
-    ctx.fillText("🌸",540,180);
+    centerText(ctx,"🪔",245,"110px sans-serif","#a44b0b");
 
-    ctx.font = "95px sans-serif";
-    ctx.fillText("🪔",540,330);
+    // Festival heading
+    let heading = festival === "diwali"
+        ? "શુભ દિવાળી"
+        : festival === "newyear"
+          ? "નુતન વર્ષ"
+          : festival === "dhanteras"
+            ? "શુભ ધનતેરસ"
+            : "શુભ ધનતેરસ";
 
-    // Heading
-    ctx.fillStyle = "#ffe28a";
-    ctx.font = "bold 100px sans-serif";
-    ctx.fillText("શુભ દિવાળી!",540,490);
 
-    // Greeting
-    ctx.fillStyle = "#fff1c6";
-    ctx.font = "bold 52px 'Nirmala UI', sans-serif";
-    ctx.fillText("પ્રિય " + receiver,540,600);
-
-    ctx.font = "42px 'Nirmala UI', sans-serif";
-    drawText(
+    centerText(
         ctx,
-        "તમને અને તમારા પરિવારને દિવાળીના પાવન પર્વની હાર્દિક શુભકામનાઓ.",
-        540,710,850,75
+        heading,
+        365,
+        "bold 78px 'Nirmala UI', sans-serif",
+        "#a5270d"
     );
 
-    ctx.fillStyle = "#ffd46b";
-    ctx.font = "45px 'Nirmala UI', sans-serif";
-
-    drawText(
+    centerText(
         ctx,
-        "તમારા જીવનમાં સુખ, શાંતિ, સમૃદ્ધિ અને ખુશીઓનો પ્રકાશ ફેલાય.",
-        540,900,850,75
+        "ની હાર્દિક શુભકામનાઓ",
+        440,
+        "bold 38px 'Nirmala UI', sans-serif",
+        "#61200c"
     );
 
-    // Diyas
-    ctx.font = "100px sans-serif";
-    ctx.fillText("🪔 ✨ 🪔",540,1100);
+    centerText(
+        ctx,
+        "પ્રિય " + receiver,
+        545,
+        "bold 48px 'Nirmala UI', sans-serif",
+        "#a5270d"
+    );
+
+    let message = festival === "diwali"
+        ? "તમને અને તમારા પરિવારને દિવાળીના પાવન પર્વની હાર્દિક શુભકામનાઓ."
+        : festival === "newyear"
+          ? "તમને અને તમારા પરિવારને નુતન વર્ષની હાર્દિક શુભકામનાઓ."
+          : "આ ધનતેરસ તમારા જીવનમાં સુખ, સમૃદ્ધિ અને ખુશીઓ લઈને આવે તેવી શુભેચ્છાઓ.";
+
+    wrapText(
+        ctx,
+        message,
+        650,
+        730,
+        65,
+        "36px 'Nirmala UI', sans-serif",
+        "#57220e"
+    );
+
+    let secondMessage = festival === "diwali"
+        ? "તમારા જીવનમાં સુખ, શાંતિ અને સમૃદ્ધિનો પ્રકાશ ફેલાય."
+        : festival === "newyear"
+          ? "નુતન વર્ષ નવી સફળતા અને ખુશીઓ લઈને આવે."
+          : "ધન, આરોગ્ય અને સફળતા હંમેશા તમારી સાથે રહે.";
+
+    wrapText(
+        ctx,
+        secondMessage,
+        810,
+        730,
+        65,
+        "34px 'Nirmala UI', sans-serif",
+        "#7b3514"
+    );
+
+    // Festival artwork
+    if(festival === "diwali") {
+
+        centerText(ctx,"🌸 🪔 ✨ 🪔 🌸",990,"85px sans-serif","#a44b0b");
+
+    } else if(festival === "newyear") {
+
+        centerText(ctx,"🪷 ✨ 🌹 ✨ 🪷",990,"85px sans-serif","#a44b0b");
+
+    } else if(festival === "dhanteras") {
+
+        centerText(ctx,"🪷 🪙 🏺 🪙 🪷",990,"85px sans-serif","#a44b0b");
+
+    }
 
     // Sender
-    ctx.fillStyle = "#fff1c6";
-    ctx.font = "bold 48px 'Nirmala UI', sans-serif";
-    ctx.fillText("શુભેચ્છક: " + sender,540,1210);
+    centerText(
+        ctx,
+        "શુભેચ્છક :",
+        1080,
+        "30px 'Nirmala UI', sans-serif",
+        "#7b3514"
+    );
 
-    ctx.fillStyle = "#ffdc7b";
-    ctx.font = "35px sans-serif";
-    ctx.fillText("HAPPY DIWALI",540,1270);
+    centerText(
+        ctx,
+        sender,
+        1130,
+        "bold 40px 'Nirmala UI', sans-serif",
+        "#a5270d"
+    );
 
-    // Create image
     cardBlob = await new Promise(resolve =>
         canvas.toBlob(resolve,"image/png")
     );
 
-    if (!cardBlob) {
-        alert("કાર્ડ બનાવવામાં મુશ્કેલી આવી. ફરી પ્રયત્ન કરો.");
+    if(!cardBlob) {
+        alert("કાર્ડ બનાવવામાં સમસ્યા આવી.");
         return;
     }
 
-    let imageURL = URL.createObjectURL(cardBlob);
+    if(cardURL) URL.revokeObjectURL(cardURL);
 
-    document.getElementById("preview").src = imageURL;
+    cardURL = URL.createObjectURL(cardBlob);
+
+    document.getElementById("preview").src = cardURL;
 
     document.getElementById("cardArea").style.display = "block";
 
     document.getElementById("cardArea").scrollIntoView({
-        behavior: "smooth"
+        behavior:"smooth"
     });
-
 }
 
 async function shareCard() {
 
-    if (!cardBlob) return;
+    if(!cardBlob) return;
 
-    let file = new File(
+    const file = new File(
         [cardBlob],
-        "Happy-Diwali.png",
+        "Festival-Wishes.png",
         {type:"image/png"}
     );
 
-    if (navigator.canShare &&
-        navigator.canShare({files:[file]}) &&
-        navigator.share) {
+    if(
+        navigator.share &&
+        navigator.canShare &&
+        navigator.canShare({files:[file]})
+    ) {
 
         try {
+
             await navigator.share({
-                files:[file],
-                title:"Happy Diwali",
-                text:"🪔 શુભ દિવાળી! 🪔"
+                title:"તહેવારની શુભકામનાઓ",
+                text:"🪔 હાર્દિક શુભકામનાઓ!",
+                files:[file]
             });
+
         } catch(error) {
-            if (error.name !== "AbortError") {
-                alert("Share કરવામાં મુશ્કેલી આવી.");
+
+            if(error.name !== "AbortError") {
+                alert("કાર્ડ શેર થઈ શક્યું નથી.");
             }
+
         }
 
     } else {
 
         downloadCard();
 
-        alert(
-          "તમારું કાર્ડ Download થયું છે. હવે WhatsApp ખોલો અને આ Image મોકલો."
-        );
-    }
+        alert("કાર્ડ Download થઈ ગયું છે. હવે WhatsAppમાં Image મોકલો.");
 
+    }
 }
 
 function downloadCard() {
 
-    if (!cardBlob) return;
+    if(!cardBlob) return;
 
-    let link = document.createElement("a");
+    const link = document.createElement("a");
 
-    link.href = URL.createObjectURL(cardBlob);
-    link.download = "Happy-Diwali.png";
+    link.href = cardURL;
+    link.download = "Festival-Wishes.png";
 
     link.click();
-
-    URL.revokeObjectURL(link.href);
 }
 
 </script>
